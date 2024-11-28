@@ -56,7 +56,6 @@ Passo-a-passo(o que ele vai fazer)
 #     "C:\\UiPathStudioSetup.exe",
 #     "C:\\atualiza bat e versao.exe",
 #     "C:\\WhatsApp.2.2.144.nupkg",
-#     "C:\\Whatsapp.bat",
 #     "C:\\app.exe"
 # ]
 
@@ -84,8 +83,8 @@ import shutil
 # Define o caminho base
 base_path = "C:\\RPA"
 arquivos_path = os.path.join(base_path, "Arquivos")
-def move_files():
-    projetos_path = os.path.join(base_path, "Projetos")
+projetos_path = os.path.join(base_path, "Projetos")
+def move_zip_files():
 
     # Cria as pastas "RPA", "Arquivos" e "Projetos"
     os.makedirs(arquivos_path, exist_ok=True)
@@ -96,10 +95,9 @@ def move_files():
     shutil.move("C:\\UiPathStudioSetup.exe", arquivos_path)
     shutil.move("C:\\atualiza bat e versao.exe", projetos_path)
     shutil.move("C:\\WhatsApp.2.2.144.nupkg", projetos_path)
-    shutil.move("C:\\Whatsapp.bat", projetos_path)
     shutil.move("C:\\app.exe", projetos_path)
 
-def install_ui_path():
+def install_uipath():
     # Caminho do instalador do UiPath
     ui_path_installer = os.path.join(arquivos_path, "UiPathStudioSetup.exe")
 
@@ -131,5 +129,16 @@ def install_ui_path():
 
         except Exception as e:
             print(f"Ocorreu um erro ao tentar executar o instalador: {e}")
+"""
+Módulo responsável por criar o arquivo bash necessário para automação.
+"""
 
-            
+
+def move_uipath_files():
+    files_mover = os.path.join(projetos_path, "atualiza bat e versao.exe")
+    print('Movendo os arquivos do robô..')
+    print('Abrindo arquivo secundário')
+    print('Arquivos movidos!')
+
+
+move_uipath_files()    
