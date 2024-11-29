@@ -74,71 +74,24 @@ Passo-a-passo(o que ele vai fazer)
 #     time.sleep(1)  # Aguarda um segundo antes de verificar novamente
 
 
-
+# import os
+# import subprocess
+# import time
 import pygetwindow as gw
-import os
-import subprocess
-import time
-import shutil
-# Define o caminho base
-base_path = "C:\\RPA"
-arquivos_path = os.path.join(base_path, "Arquivos")
-projetos_path = os.path.join(base_path, "Projetos")
-def move_zip_files():
+from helpers.file_operations import move_uipath_files
+from helpers.file_operations import move_zip_files
+from project_scripts.exe_runner import  install_uipath
+from helpers.path_operations import create_directories
+# base_path = "C:\\RPA"
+# arquivos_path = os.path.join(base_path, "Arquivos")
+# projetos_path = os.path.join(base_path, "Projetos")
 
-    # Cria as pastas "RPA", "Arquivos" e "Projetos"
-    os.makedirs(arquivos_path, exist_ok=True)
-    os.makedirs(projetos_path, exist_ok=True)
+def main():
+    create_directories()
+    move_zip_files()
+    install_uipath()
+    move_uipath_files()
 
-    print('Os diretórios foram criados!')
-    # Move os arquivos para as pastas corretas
-    shutil.move("C:\\UiPathStudioSetup.exe", arquivos_path)
-    shutil.move("C:\\atualiza bat e versao.exe", projetos_path)
-    shutil.move("C:\\WhatsApp.2.2.144.nupkg", projetos_path)
-    shutil.move("C:\\app.exe", projetos_path)
-
-def install_uipath():
-    # Caminho do instalador do UiPath
-    ui_path_installer = os.path.join(arquivos_path, "UiPathStudioSetup.exe")
-
-    # Verifica se o instalador existe
-    # Verifica se o instalador existe
-    if not os.path.exists(ui_path_installer):
-        print(f"Erro: O instalador não foi encontrado no caminho: {ui_path_installer}")
-    else:
-        try:
-            # Muda o diretório de trabalho para a pasta "Arquivos" e executa o instalador do UiPath
-            print(f"Executando o instalador: {ui_path_installer}")
-            subprocess.Popen(ui_path_installer, cwd=arquivos_path, shell=True)
-
-            # Aguarda a janela "UiPath Studio" ou "UiPathStudioSetup.exe" aparecer
-            
-            while True:
-                time.sleep(1)  # Aguarda 1 segundo antes de verificar novamente
-                success_window = gw.getWindowsWithTitle("UiPath Studio")
-                error_window = gw.getWindowsWithTitle("UiPathStudioSetup.exe")
-                installing_window = gw.getWindowsWithTitle("Installing...")
-                if success_window:
-                    print("A instalação do UiPath foi concluída e a janela 'UiPath Studio' está aberta.")
-                    break
-                elif error_window:
-                    print("A instalação do UiPath falhou e a janela 'UiPathStudioSetup.exe' está aberta.")
-                    break
-                elif installing_window:
-                    print("Installing...")
-
-        except Exception as e:
-            print(f"Ocorreu um erro ao tentar executar o instalador: {e}")
-"""
-Módulo responsável por criar o arquivo bash necessário para automação.
-"""
-
-
-def move_uipath_files():
-    files_mover = os.path.join(projetos_path, "atualiza bat e versao.exe")
-    print('Movendo os arquivos do robô..')
-    print('Abrindo arquivo secundário')
-    print('Arquivos movidos!')
-
-
-move_uipath_files()    
+if __name__ == "__main__":
+    # main()
+    install_uipath()
