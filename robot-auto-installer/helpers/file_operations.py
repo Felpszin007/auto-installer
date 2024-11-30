@@ -6,6 +6,7 @@ import subprocess
 base_path = "C:\\RPA"
 arquivos_path = os.path.join(base_path, "Arquivos")
 projetos_path = os.path.join(base_path, "Projetos")
+imagens_path = os.path.join(base_path, "Imagens")
 
 
 def move_zip_files():
@@ -16,7 +17,11 @@ def move_zip_files():
         "C:\\UiPathStudioSetup.exe": arquivos_path,
         "C:\\atualiza bat e versao.exe": projetos_path,
         "C:\\WhatsApp.2.2.144.nupkg": projetos_path,
-        "C:\\app.exe": projetos_path
+        "C:\\app.exe": projetos_path,
+        "C:\\uipath_logo.png": imagens_path,
+        "C:\\mais_opcoes_logo.png": imagens_path,
+        
+
     }
 
     for src, dst in files_to_move.items():
