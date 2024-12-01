@@ -14,13 +14,21 @@ def move_zip_files():
 
     # Lista de arquivos a serem movidos
     files_to_move = {
-        "C:\\UiPathStudioSetup.exe": arquivos_path,
-        "C:\\atualiza bat e versao.exe": projetos_path,
-        "C:\\WhatsApp.2.2.144.nupkg": projetos_path,
         "C:\\app.exe": projetos_path,
-        "C:\\uipath_logo.png": imagens_path,
-        "C:\\mais_opcoes_logo.png": imagens_path,
-        
+        "C:\\atualiza bat e versao.exe":  projetos_path,
+        "C:\\close_button.png":imagens_path,
+        "C:\\community_offline_button.png":imagens_path,
+        "C:\\definicoes_sidebar_button.png":imagens_path,
+        "C:\\ferramentas_sidebar_button.png":imagens_path,
+        "C:\\gerir_origens_button.png":imagens_path,
+        "C:\\install_chrome_extension_button.png":imagens_path,
+        "C:\\mais_opcoes_button.png":imagens_path,
+        "C:\\nugget_box.png":imagens_path,
+        "C:\\ok_button.png":imagens_path,
+        "C:\\opcoes_autonomas_button.png":imagens_path,
+        "C:\\uipath_studio_option_button.png":imagens_path,
+        "C:\\UiPathStudioSetup.exe":arquivos_path,
+        "C:\\Whatsapp.2.2.144.nupkg":projetos_path,
 
     }
 

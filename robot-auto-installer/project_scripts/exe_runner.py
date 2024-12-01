@@ -2,12 +2,13 @@ import os
 import subprocess
 import time
 import pygetwindow as gw
-
-base_path = "C:\\RPA"
-arquivos_path = os.path.join(base_path, "Arquivos")
-projetos_path = os.path.join(base_path, "Projetos")
+import sys
 
 def install_uipath():
+
+    base_path = "C:\\RPA"
+    arquivos_path = os.path.join(base_path, "Arquivos")
+    projetos_path = os.path.join(base_path, "Projetos")
     # Caminho do instalador do UiPath
     ui_path_installer = os.path.join(arquivos_path, "UiPathStudioSetup.exe")
 
@@ -35,3 +36,6 @@ def install_uipath():
 
     except Exception as e:
         print(f"Ocorreu um erro ao tentar executar o instalador: {e}")
+        # sys.exit()
+
+        
