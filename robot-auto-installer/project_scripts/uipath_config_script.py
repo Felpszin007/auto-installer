@@ -39,8 +39,16 @@ def turn_to_the_window(window_name):
 
 def configure_uipath():
     
-    turn_to_the_window("UiPath Studio")
-    find_and_click_by_image("C:\\RPA\\Imagens\\mais_opcoes_button.png")
-    find_and_click_by_image("C:\\RPA\\Imagens\\opcoes_autonomas_button.png")
-    find_and_click_by_image("C:\\RPA\\Imagens\\community_offline_button.png")
+    # turn_to_the_window("UiPath Studio")
+    # find_and_click_by_image("C:\\RPA\\Imagens\\mais_opcoes_button.png")
+    # find_and_click_by_image("C:\\RPA\\Imagens\\opcoes_autonomas_button.png")
+    # find_and_click_by_image("C:\\RPA\\Imagens\\community_offline_button.png")
+    # find_and_click_by_image("C:\\RPA\\Imagens\\uipath_studio_option_button.png")
+    pyautogui.sleep(5) 
+    find_and_click_by_image("C:\\RPA\\Imagens\\close_button.png")
+    find_and_click_by_image("C:\\RPA\\Imagens\\ferramentas_sidebar_button.png")
+    find_and_click_by_image("C:\\RPA\\Imagens\\install_chrome_extension_button.png")
+    find_and_click_by_image("C:\\RPA\\Imagens\\definicoes_sidebar_button.png")
+    find_and_click_by_image("C:\\RPA\\Imagens\\gerir_origens_button.png")
+    find_and_click_by_image("C:\\RPA\\Imagens\\nugget_box.png")
 configure_uipath()        
