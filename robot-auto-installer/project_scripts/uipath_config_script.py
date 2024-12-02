@@ -1,5 +1,8 @@
 import pyautogui
 import pygetwindow as gw
+# import cv2
+
+ 
 
 def find_and_click_by_image(image_path, confidence):
     # Espera um pouco para que você possa mudar para a janela desejada
@@ -36,7 +39,7 @@ def turn_to_the_window(window_name):
 
 def configure_uipath():
     main_confidence = 0.9
-    pyautogui.sleep(30)
+    pyautogui.sleep(10)
     turn_to_the_window("UiPath Studio")
     find_and_click_by_image("C:\\RPA\\Imagens\\mais_opcoes_button.png", main_confidence)
     find_and_click_by_image("C:\\RPA\\Imagens\\opcoes_autonomas_button.png", main_confidence)
@@ -55,3 +58,4 @@ def configure_uipath():
     find_and_click_by_image("C:\\RPA\\Imagens\\ok_button.png",0.8)
     find_and_click_by_image("C:\\RPA\\Imagens\\ok_button.png",0.8)
 
+# configure_uipath()

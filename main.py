@@ -77,7 +77,7 @@ Passo-a-passo(o que ele vai fazer)
 # import os
 # import subprocess
 # import time
-import pygetwindow as gw
+
 from helpers.path_operations import create_directories
 from helpers.file_operations import move_zip_files
 from project_scripts.exe_runner import  install_uipath

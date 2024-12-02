@@ -1,4 +1,6 @@
 Lib/
 Include/
 Scripts/
-
+*.spec
+build/
+dist/
