@@ -67,12 +67,4 @@ def move_uipath_files():
     except Exception as e:
         print(f"Ocorreu um erro inesperado: {e}")
 
-    # # Mover arquivos .nupkg
-    # for file in os.listdir(projetos_path):
-    #     if file.endswith(".nupkg"):
-    #         full_file_path = os.path.join(projetos_path, file)
-    #         if os.path.exists(full_file_path):
-    #             shutil.move(full_file_path, package_dir)
-    #             print(f"Arquivo {file} movido com sucesso.")
-    #         else:
-    #             print(f"O arquivo {full_file_path} não foi encontrado.")
+    
