@@ -43,7 +43,7 @@ def install_uipath():
         print(f"Ocorreu um erro ao tentar executar o instalador: {e}")
 
 # Chame a função para testar
-install_uipath()
+# install_uipath()
 
 
         
